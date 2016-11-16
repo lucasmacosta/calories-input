@@ -1,0 +1,33 @@
+{
+  "name": "calories-input",
+  "version": "0.0.1",
+  "description": "Application for the input of calories",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "NODE_ENV=test ./node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- -R spec --growl --timeout 3000 tests/backend/integration/index.js"
+  },
+  "author": "Lucas M. Acosta",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.0-rc.6",
+    "body-parser": "^1.15.2",
+    "connect-roles": "^3.1.2",
+    "crypto": "0.0.3",
+    "express": "^4.14.0",
+    "express-jwt": "^3.4.0",
+    "joi": "^8.4.2",
+    "jsonwebtoken": "^7.0.1",
+    "lodash": "^4.13.1",
+    "moment": "^2.13.0",
+    "mongoose": "^4.5.2",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.4",
+    "mocha": "^2.5.3",
+    "should": "^9.0.2",
+    "sinon": "^1.17.4",
+    "superagent": "^2.0.0"
+  }
+}

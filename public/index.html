@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/"/>
+    <title>Calories Input</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- build:css assets/css/style.css -->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/ng-table/dist/ng-table.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="calories-input">
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- build:js js/ie.js -->
+    <!--[if lt IE 9]>
+    <script src="lib/es5-shim/es5-shim.min.js"></script>
+    <script src="lib/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <ci-navbar></ci-navbar>
+    <div class="container" ng-view="" autoscroll></div>
+
+    <!-- build:js js/app.js -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/ngstorage/ngStorage.min.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="lib/angular-http-auth/src/http-auth-interceptor.js"></script>
+    <script src="lib/angular-animate/angular-animate.min.js"></script>
+    <script src="lib/lodash/dist/lodash.min.js"></script>
+    <script src="lib/ng-table/dist/ng-table.min.js"></script>
+    <script src="lib/moment/min/moment.min.js"></script>
+
+    <!-- Base controllers-->
+
+    <script src="modules/app.js"></script>
+    <script src="modules/base/controllers/main.js"></script>
+    <script src="modules/base/controllers/login.js"></script>
+    <script src="modules/base/controllers/register.js"></script>
+
+    <!-- User controllers-->
+    <script src="modules/user/controllers/list.js"></script>
+    <script src="modules/user/controllers/add.js"></script>
+    <script src="modules/user/controllers/edit.js"></script>
+
+    <!-- Meal controllers -->
+    <script src="modules/meal/controllers/list.js"></script>
+    <script src="modules/meal/controllers/add.js"></script>
+    <script src="modules/meal/controllers/edit.js"></script>
+
+    <!-- Services-->
+    <script src="modules/base/services/authService.js"></script>
+    <script src="modules/base/services/registerService.js"></script>
+    <script src="modules/base/services/flashService.js"></script>
+    <script src="modules/user/services/userService.js"></script>
+    <script src="modules/meal/services/mealService.js"></script>
+
+    <!-- Interceptors-->
+    <script src="modules/base/interceptors/authInterceptor.js"></script>
+
+    <!-- Directives-->
+    <script src="modules/base/directives/navbar.js"></script>
+    <script src="modules/base/directives/serverError.js"></script>
+    <script src="modules/base/directives/flashMessage.js"></script>
+    <script src="modules/base/directives/restrictedTo.js"></script>
+    <script src="modules/base/directives/processing.js"></script>
+    <script src="modules/base/directives/passwordConfirm.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:remove -->
+    <script src="//localhost:35729/livereload.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

@@ -1,0 +1,34 @@
+@import (reference) '../../lib/bootstrap/less/bootstrap.less';
+
+.processing-container {
+  position: relative;
+  .clearfix();
+
+  & .form-loader {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    background-image: url('../img/form-loader.gif');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    opacity: 0;
+  }
+
+  &.processing .form-loader {
+    opacity: 1;
+    z-index: 10;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+  }
+}
+
+.meals-list {
+  margin-top: 10px;
+}

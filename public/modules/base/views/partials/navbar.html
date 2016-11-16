@@ -1,0 +1,29 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#/">Calories Input</a>
+    </div>
+    <div class="collapse navbar-collapse" ng-if="isAuthorized()">
+      <ul class="nav navbar-nav">
+        <li uib-dropdown ci-restricted-to="['admin', 'usersManager']">
+          <a uib-dropdown-toggle data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users <span class="caret"></span></a>
+          <ul class="dropdown-menu" uib-dropdown-menu>
+            <li><a href="#/users">List</a></li>
+            <li><a href="#/users/add">Add</a></li>
+          </ul>
+        </li>
+        <li uib-dropdown ci-restricted-to="['user']">
+          <a uib-dropdown-toggle data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meals <span class="caret"></span></a>
+          <ul class="dropdown-menu" uib-dropdown-menuZ>
+            <li><a href="" ng-click="myMeals()">List</a></li>
+            <li><a href="" ng-click="addMeal()">Add</a></li>
+          </ul>
+        </li>
+        <li><a href="" ng-click="editProfile()">Edit Profile</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/logout">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

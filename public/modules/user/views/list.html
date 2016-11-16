@@ -1,0 +1,34 @@
+<section>
+
+  <ci-flash-message></ci-flash-message>
+
+  <div class="col-lg-8 col-md-6 col-sm-6" ci-processing="userToDelete || loading">
+    <a href="#/users/add" type="button" class="btn btn-success pull-right">Add User</a>
+
+    <header>
+      <h2>Users</h2>
+    </header>
+
+    <ci-server-error error-message="serverError"></ci-server-error>
+
+    <table ng-table="tableParams" class="table table-striped table-bordered table-hover">
+      <tbody>
+      <tr ng-repeat="user in $data">
+        <td data-title="'Username'">{{ user.username }}</td>
+        <td data-title="'Name'">{{ user.name }}</td>
+        <td data-title="'Role'">
+          <span ng-if="user.role === 'user'" class="text-success"><strong>User</strong></span>
+          <span ng-if="user.role === 'usersManager'" class="text-warning"><strong>Users Manager</strong></span>
+          <span ng-if="user.role === 'admin'" class="text-danger"><strong>Admin</strong></span>
+        </td>
+        <td data-title="'Actions'">
+          <button class="btn btn-primary" type="button" ng-click="edit(user)">Edit</button>
+          <button class="btn btn-danger" type="button" ng-click="delete(user)">Delete</button>
+          <button class="btn btn-primary" type="button" ng-click="meals(user)" ng-if="user.role === 'user'" ci-restricted-to="['admin']">Meals</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</section>

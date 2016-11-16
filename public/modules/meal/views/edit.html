@@ -1,0 +1,52 @@
+<section>
+
+  <ci-flash-message></ci-flash-message>
+
+  <div class="col-lg-8 col-md-6 col-sm-6">
+
+    <h2 ng-if="create">Add Meal</h2>
+    <h2 ng-if="update">Update Meal</h2>
+
+    <ci-server-error error-message="serverError"></ci-server-error>
+
+    <form name="form" role="form" ng-submit="save()" novalidate ci-processing="loading || mealData">
+
+      <div class="form-group" ng-class="{'has-error': form.date.$touched && form.date.$invalid}">
+        <label for="date">Date</label>
+        <p class="input-group">
+          <input uib-datepicker-popup is-open="calPopup.opened" datepicker-options="calOptions" type="text" class="form-control" name="date" id="date" ng-model="meal.datePart" placeholder="Date" required>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="openCalendar()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+        <div ng-show="form.$submitted || form.date.$touched">
+          <span ng-show="form.date.$error.required" class="help-block">*This field is required.</span>
+          <span ng-show="form.date.$error.date" class="help-block">*Date is invalid.</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Time</label>
+        <uib-timepicker ng-model="meal.timePart" minute-step="15" show-meridian="false" id="time" ng-required="true"></uib-timepicker>
+      </div>
+
+      <div class="form-group" ng-class="{'has-error': form.comments.$touched && form.comments.$invalid}">
+        <label for="comments">Comments</label>
+        <textarea class="form-control" name="comments" id="comments" ng-model="meal.comments" placeholder="Comments" rows="3"></textarea>
+      </div>
+
+      <div class="form-group" ng-class="{'has-error': form.calories.$touched && form.calories.$invalid}">
+        <label for="calories">Calories</label>
+        <input type="number" min="0" class="form-control" name="calories" id="calories" ng-model="meal.calories" placeholder="Calories" required>
+        <div ng-show="form.$submitted || form.calories.$touched">
+          <span ng-show="form.calories.$error.min" class="help-block">*Value cannot be negative.</span>
+        </div>
+      </div>
+
+      <button ng-class="{'disabled': form.$invalid}" type="submit" class="btn btn-default" ng-disabled="form.$invalid">Submit</button>
+
+    </form>
+
+  </div>
+
+</section>
